@@ -1,102 +1,79 @@
 # DevelopersHub-DataScience-Internship-AdvTasks
 This repository contains internship tasks assigned as the 2nd Task of Data Science internship at DevelopersHub
 
-## Tasks Summary
+## Task 2: Customer Segmentation
 
-### Task 2: Customer Segmentation
+**Objective:**
+Cluster customers based on spending habits and propose targeted strategies for each segment.
 
-**-> Objective:**
-Segment customers into distinct groups based on demographic and financial features to identify target audiences for credit risk.
+**Dataset:**
 
-**-> Approach:**
+* **Mall Customers Dataset** from Kaggle
+* Features: CustomerID, Gender, Age, Annual Income (k\$), Spending Score (1–100)
 
-* Dataset: `TrainData_1.csv` (also used in Task 4).
-* Data Preprocessing:
+**Approach:**
 
-  * Handled missing values.
-  * Label encoding for categorical variables.
-  * Normalization for numerical features.
-* Exploratory Data Analysis (EDA):
+* Performed data cleaning and feature scaling.
+* Conducted exploratory analysis using distributions, scatter plots, and correlation heatmaps.
+* Used KMeans Clustering to segment customers.
+* Determined optimal number of clusters using the Elbow Method and Silhouette Score.
+* Visualized clusters using 2D and 3D scatter plots.
 
-  * Box plots and count plots to examine feature distributions and outliers.
-* Applied **KMeans Clustering**:
-
-  * Chose optimal `k` using the Elbow Method.
-  * Clustered customers based on features like income, credit amount, and employment status.
-
-**-> Results & Insights:**
-
-* Clear segmentation of customers into low-risk and high-risk financial behavior clusters.
-* Employment status and marital status were significant in cluster formation.
-* Visualization revealed distinct cluster groups, aiding in personalized financial product offerings.
+**Outcome:**
+Customers were segmented into distinct groups based on their income and spending scores. These clusters help identify high-value and low-engagement customers, allowing personalized marketing strategies.
 
 ---
 
-### Task 4: Loan Default Risk Prediction
+## Task 4: Loan Default Risk Prediction
 
-**-> Objective:**
-Predict the probability of a customer defaulting on a loan based on historical application data.
+**Objective:**
+Predict the risk of loan default using customer demographic and financial features.
 
-**-> Approach:**
+**Dataset:**
 
-* Dataset: `TrainData_1.csv` and `TestData_1.csv`.
-* Data Preprocessing:
+* `Loan_Default_Sample.csv`
 
-  * Imputed missing values.
-  * Converted categorical variables using label encoding.
-* Models Applied:
+**Approach:**
 
-  * **Logistic Regression**
-  * **Random Forest Classifier**
-* Evaluation:
+* Handled missing values and encoded categorical variables.
+* Explored data using count plots and histograms.
+* Trained two models: Logistic Regression and Random Forest Classifier.
+* Evaluated models using accuracy, precision, recall, and confusion matrix.
 
-  * Accuracy, Confusion Matrix, Precision, Recall, F1-Score.
-
-**-> Results & Insights:**
-
-* Random Forest performed better than Logistic Regression with improved recall and F1-score.
-* Significant predictors:
-
-  * **Credit Amount** (relative to income),
-  * **Age**,
-  * **Employment Status**,
-  * **Annuity** and **Marital Status**.
-* Unemployed or single individuals were at higher risk of default.
+**Outcome:**
+Random Forest achieved better performance, especially in identifying defaulters. Important features included credit amount, employment status, annuity amount, and marital status. The model helps in pre-screening high-risk applicants.
 
 ---
 
-### Task 5: Business Dashboard (Interactive Visualization)
+## Task 5: Business Dashboard
 
-**-> Objective:**
-Build an interactive business intelligence dashboard for stakeholders to analyze customer, loan, and risk data effectively.
+**Objective:**
+Create an interactive dashboard to visualize loan data and identify risk trends across demographic groups.
 
-**-> Approach:**
+**Dataset:**
 
-* Tool Used: `Plotly` + `Dash` (or visual libraries inside Jupyter Notebook).
-* Dataset: Aggregated loan and customer demographic data.
-* Dashboard Components:
+* `Global_Superstore.csv` 
 
-  * Interactive bar charts for default rates by employment/marital status.
-  * Pie charts showing distribution of approved vs rejected loans.
-  * Time series or grouped bar plots for income vs credit amount vs risk.
-  * Filters for user to select by region, gender, or other demographic features.
+**Approach:**
 
-**-> Results & Insights:**
+* Used Plotly and Dash within a Jupyter Notebook.
+* Dashboard components include:
 
-* Decision-makers can visually analyze high-risk customer segments.
-* Dynamic filters enabled focused insight into specific customer demographics.
-* Supports data-driven strategy in loan approval and risk assessment.
+  * Pie charts for loan status distribution.
+  * Bar charts for loan approval by gender and marital status.
+  * Count plots for employment-based risk groups.
+  * Interactive widgets for dynamic filtering.
 
----
-
-### Tools & Libraries Used:
-
-* **Python**: Pandas, NumPy, Scikit-learn
-* **Visualization**: Seaborn, Matplotlib, Plotly
-* **Modeling**: Logistic Regression, Decision Tree, Random Forest, KMeans
-* **Dashboards**: Plotly Dash / Interactive Notebook Visuals
-* **Environment**: Jupyter Notebook
+**Outcome:**
+The dashboard provides stakeholders with a visual tool to analyze customer profiles and risk levels. It aids in monitoring loan approval trends and identifying high-risk customer segments based on selected filters.
 
 ---
 
-Let me know if you'd like this exported as a `.md` file or tailored to a specific audience (e.g., HR, business analysts, technical reviewers).
+## Technologies Used
+
+Category      | Tools                             
+Data Handling | Pandas, NumPy                     
+Visualization | Matplotlib, Seaborn, Plotly       
+Modeling      | Scikit-learn (LogReg, RF, KMeans) 
+Dashboard     | Plotly Dash                       
+Environment   | Jupyter Notebook                  
